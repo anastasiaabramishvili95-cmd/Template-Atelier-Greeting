@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F6F0E6">
+<title>Template Atelier — 2027 Life Planner Greeting</title>
+<style>
+:root{--ivory:#F6F0E6;--paper:#FBF8F1;--sage:#D9DCCF;--olive:#59634B;--ink:#3E4437;--muted:#625C51;--gold:#B59A68;--line:rgba(181,154,104,.68)}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:transparent}
+body{padding:4px;font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
+.banner{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.08fr) 1px minmax(0,.92fr);align-items:center;gap:clamp(22px,4vw,58px);width:100%;min-height:205px;padding:clamp(25px,4vw,45px) clamp(24px,5vw,70px);overflow:hidden;border:1px solid var(--line);border-radius:22px;background:radial-gradient(ellipse at 8% 8%,rgba(255,255,255,.9),transparent 38%),radial-gradient(ellipse at 90% 100%,rgba(217,220,207,.48),transparent 42%),linear-gradient(110deg,var(--paper),var(--ivory) 58%,#F0EBDD);box-shadow:0 5px 18px rgba(62,68,55,.045)}
+.content{position:relative;z-index:2;min-width:0}
+.eyebrow{margin:0 0 12px;font:700 10px/1.6 Arial,Helvetica,sans-serif;letter-spacing:.27em;text-transform:uppercase;color:var(--olive)}
+h1{font:italic 400 clamp(27px,3.35vw,44px)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.035em;color:var(--ink);margin:0 0 13px}
+.meta{font:400 clamp(12px,1.2vw,15px)/1.65 Georgia,"Times New Roman",serif;color:var(--muted);margin:0}
+.rule{width:42px;height:1px;background:var(--gold);margin:16px 0 13px}
+.prompt{font:italic 400 clamp(14px,1.5vw,19px)/1.5 Georgia,"Times New Roman",serif;color:#605D4E;margin:0;max-width:560px}
+.divider{align-self:stretch;min-height:125px;background:linear-gradient(transparent,var(--gold) 15%,var(--gold) 85%,transparent);position:relative}
+.divider:after{content:"";position:absolute;width:7px;height:7px;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--gold);border-radius:50%;box-shadow:0 0 0 4px var(--ivory)}
+.right{padding-right:clamp(5px,2vw,20px)}
+.quote{font:italic 400 clamp(22px,2.45vw,33px)/1.34 Georgia,"Times New Roman",serif;color:var(--olive);margin:0;max-width:480px}
+.quote-mark{color:var(--gold)}
+.footer-note{font:400 clamp(12px,1.1vw,14px)/1.65 Georgia,"Times New Roman",serif;color:var(--muted);margin:0}
+.botanical{position:absolute;z-index:1;pointer-events:none;opacity:.62;width:95px;height:145px}
+.botanical.left{left:-5px;bottom:-4px}
+.botanical.right{right:-4px;top:-8px;transform:scaleX(-1) rotate(-5deg);opacity:.48}
+@media(max-width:560px){.banner{grid-template-columns:1fr;gap:18px;padding:23px 22px 24px 27px;border-radius:16px}.divider{width:100%;height:1px;min-height:1px;background:linear-gradient(90deg,transparent,var(--gold) 15%,var(--gold) 85%,transparent)}.right{padding:0 8px 0 0}.quote{font-size:24px}.botanical{width:50px;height:80px;opacity:.25}.eyebrow{font-size:9px}}
+</style>
+</head>
+<body>
+<main class="banner" aria-label="2027 Life Planner daily greeting">
+<svg class="botanical left" viewBox="0 0 100 150" fill="none" aria-hidden="true"><path d="M9 146C25 119 29 88 64 20" stroke="#59634B" stroke-width="1.6"/><path d="M27 112C4 111 2 94 5 85C22 87 31 96 27 112Z" fill="#8B9676"/><path d="M35 91C58 92 70 77 69 65C48 67 36 78 35 91Z" fill="#687654"/><path d="M44 69C23 65 19 49 24 40C42 47 49 57 44 69Z" fill="#A7AD91"/><path d="M53 49C72 47 81 32 78 22C61 27 51 37 53 49Z" fill="#596B4C"/></svg>
+<svg class="botanical right" viewBox="0 0 100 150" fill="none" aria-hidden="true"><path d="M9 146C25 119 29 88 64 20" stroke="#59634B" stroke-width="1.6"/><path d="M27 112C4 111 2 94 5 85C22 87 31 96 27 112Z" fill="#8B9676"/><path d="M35 91C58 92 70 77 69 65C48 67 36 78 35 91Z" fill="#687654"/><path d="M44 69C23 65 19 49 24 40C42 47 49 57 44 69Z" fill="#A7AD91"/><path d="M53 49C72 47 81 32 78 22C61 27 51 37 53 49Z" fill="#596B4C"/></svg>
+<section class="content left">
+<p class="eyebrow" id="greeting">GOOD AFTERNOON, YOU</p>
+<h1>Welcome to your calm 2027.</h1>
+<p class="meta" id="date-line">Loading date, time and countdown…</p>
+<div class="rule"></div>
+<p class="prompt" id="reflection">Halfway there. Drop one thing that no longer matters today.</p>
+</section>
+<div class="divider" aria-hidden="true"></div>
+<section class="content right">
+<p class="eyebrow">WHEN YOU’RE READY</p>
+<p class="quote">“<span id="quote">Your year can be shaped by small, intentional choices.</span>”</p>
+<div class="rule"></div>
+<p class="footer-note">Make space for what matters. Begin with one small step today.</p>
+</section>
+</main>
+<script>
+(function(){
+  "use strict";
+  const quotes = [
+    "Your year can be shaped by small, intentional choices.",
+    "Progress, not perfection, is the real luxury.",
+    "You do not have to do everything; only the next meaningful thing.",
+    "Let today be guided by purpose, not pressure.",
+    "Small steps, repeated with care, become a life.",
+    "Discipline is a kindness you offer your future self.",
+    "Choose what matters, and let the rest wait.",
+    "Begin again as many times as you need."
+  ];
+  const reflections = [
+    "Halfway there. Drop one thing that no longer matters today.",
+    "Begin gently. Choose what matters most today.",
+    "Make a little space for something good today.",
+    "You can move forward without rushing.",
+    "Give your attention to the life you want to grow."
+  ];
+  const $ = id => document.getElementById(id);
+  function updateGreeting(){
+    const now = new Date();
+    const hour = now.getHours();
+    const greeting = hour < 12 ? "GOOD MORNING" : hour < 17 ? "GOOD AFTERNOON" : hour < 21 ? "GOOD EVENING" : "GOOD NIGHT";
+    $("greeting").textContent = greeting + ", YOU";
+
+    const dateText = new Intl.DateTimeFormat("en-US", {
+      weekday:"long", month:"long", day:"numeric"
+    }).format(now);
+    const timeText = new Intl.DateTimeFormat("en-US", {
+      hour:"numeric", minute:"2-digit"
+    }).format(now).toLowerCase();
+
+    // Use local midnight for an accurate whole-day countdown to Jan 1, 2027.
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const newYear2027 = new Date(2027, 0, 1);
+    const msPerDay = 24 * 60 * 60 * 1000;
+    const daysUntil = Math.round((newYear2027 - today) / msPerDay);
+    let countdown;
+    if (daysUntil > 0) {
+      countdown = daysUntil + (daysUntil === 1 ? " day until 2027" : " days until 2027");
+    } else if (now.getFullYear() === 2027) {
+      const daysLeft = Math.round((new Date(2028,0,1) - today) / msPerDay);
+      countdown = daysLeft + (daysLeft === 1 ? " day left in 2027" : " days left in 2027");
+    } else {
+      countdown = "Happy New Year";
+    }
+    $("date-line").textContent = dateText + " · " + timeText + " · " + countdown;
+
+    // Stable daily rotation: the text changes by date, not every refresh.
+    const start = new Date(now.getFullYear(), 0, 0);
+    const dayOfYear = Math.floor((today - start) / msPerDay);
+    $("quote").textContent = quotes[dayOfYear % quotes.length];
+    $("reflection").textContent = reflections[dayOfYear % reflections.length];
+  }
+  function safeUpdate(){
+    try { updateGreeting(); }
+    catch (error) {
+      $("date-line").textContent = "Today · " + new Date().toLocaleTimeString() + " · Countdown to 2027";
+      console.error("Greeting widget update failed:", error);
+    }
+  }
+  safeUpdate();
+  setInterval(safeUpdate, 15000);
+})();
+</script>
+</body>
+</html>
